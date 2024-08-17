@@ -4,7 +4,7 @@ source ./common.sh
 
 check_root
 
-echo "Enter DB password:"
+echo "Enter DB password:::ExpenseApp@1"
 read -s db_root_password
 
 
@@ -18,7 +18,9 @@ dnf install nodejs -y &>>LOG_FILE
 VALIDATE $? "Install nodejs"
 
 
-id expense
+id expense &>>LOG_FILE
+VALIDATE $? "id expense"
+
 if [ $? -eq 0 ]
 then 
     echo "user already exists"
