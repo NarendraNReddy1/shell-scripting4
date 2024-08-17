@@ -19,6 +19,7 @@ VALIDATE $? "Install nodejs"
 
 
 id expense &>>LOG_FILE
+echo $?
 
 
 if [ $? -ne 0 ]
