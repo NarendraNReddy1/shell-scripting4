@@ -67,6 +67,10 @@ mysql -h db.narendra.shop -uroot -p${db_root_password} < /app/schema/backend.sql
 VALIDATE $? "Mysql Server"
 
 
+systemctl restart backend &>>$LOG_FILE
+VALIDATE $? "Restart backend"
+
+
 
 
 
