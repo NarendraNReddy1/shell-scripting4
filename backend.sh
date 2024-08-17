@@ -4,7 +4,7 @@ source ./common.sh
 
 check_root
 
-echo $0
+echo $LOG_FILE
 
 echo "Enter DB password:::ExpenseApp@1"
 read -s db_root_password
