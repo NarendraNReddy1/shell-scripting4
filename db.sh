@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Enter password:"
+echo "Enter password:ExpenseApp@1"
 read -s db_root_password
 
 source ./common.sh
