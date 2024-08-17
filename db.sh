@@ -17,5 +17,12 @@ VALIDATE $? "Start mysqld"
 
 mysql -h db.narendra.shop -uroot -pExpenseApp@1 -e "SHOW DATABASES" &>>LOG_FILE
 
+if [ $? -eq 0 ]
+then 
+    echo "Password already set $Y SKIPPING $N"
+else 
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOG_FILE
-VALIDATE $? "Start mysqld"
+VALIDATE $? "db password"
+fi
+
+
