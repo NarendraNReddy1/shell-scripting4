@@ -7,7 +7,7 @@ source ./common.sh
 
 check_root
 
-dnf install mysql-serverrrrr -y &>>LOG_FILE
+dnf install mysql-server -y &>>LOG_FILE
 #VALIDATE $? "Installation of mysql-server"
 
 
