@@ -21,12 +21,12 @@ VALIDATE $? "Install nodejs"
 id expense &>>LOG_FILE
 
 
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 then 
-    echo "user already exists"
-else 
     useradd expense &>>LOG_FILE
     VALIDATE $? "expense user addition"
+else 
+    echo "User already exists"
 fi
 
 mkdir -p /app &>>LOG_FILE
