@@ -60,6 +60,12 @@ VALIDATE $? "Start backend"
 systemctl enable backend &>>$LOG_FILE
 VALIDATE $? "Enable backend"
 
+dnf install mysql -y &>>$LOG_FILE
+VALIDATE $? "Mysql Server"
+
+mysql -h db.narendra.shop -uroot -p${db_root_password} < /app/schema/backend.sql &>>$LOG_FILE
+VALIDATE $? "Mysql Server"
+
 
 
 
