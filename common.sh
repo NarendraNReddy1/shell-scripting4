@@ -18,7 +18,7 @@ Y="\e[33m"
 
 
 check_root(){
-    if [ USER_ID -ne 0 ]
+    if [ $USER_ID -ne 0 ]
     then 
         echo "Please be a super user"
         exit 1
