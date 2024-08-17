@@ -19,7 +19,7 @@ VALIDATE $? "Install nodejs"
 
 
 id expense &>>LOG_FILE
-VALIDATE $? "id expense"
+
 
 if [ $? -eq 0 ]
 then 
