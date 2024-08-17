@@ -22,7 +22,7 @@ check_root(){
     then 
         echo "Please be a super user"
         exit 1
-    then 
+    else 
         echo "You are already a super user"
     fi    
 }
