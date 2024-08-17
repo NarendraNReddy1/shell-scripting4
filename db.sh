@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Enter password:"
+read -s db_root_password
 
 source ./common.sh
 
@@ -15,13 +17,13 @@ VALIDATE $? "Enable mysqld"
 systemctl start mysqld &>>LOG_FILE
 VALIDATE $? "Start mysqld"
 
-mysql -h db.narendra.shop -uroot -pExpenseApp@1 -e "SHOW DATABASES" &>>LOG_FILE
+mysql -h db.narendra.shop -uroot -p${db_root_password} -e "SHOW DATABASES" &>>LOG_FILE
 
 if [ $? -eq 0 ]
 then 
-    echo "Password already set $Y SKIPPING $N"
+    echo -e "Password already set $Y SKIPPING $N"
 else 
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>LOG_FILE
+mysql_secure_installation --set-root-pass ${db_root_password} &>>LOG_FILE
 VALIDATE $? "db password"
 fi
 
