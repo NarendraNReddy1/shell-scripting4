@@ -8,6 +8,14 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
+set -e 
+
+handle_error(){
+    echo "Error occured at line number  $1: error: $2"
+}
+
+trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
+
 # if [ USER_ID -ne 0 ]
 # then 
 #     echo "Please be a super user"
